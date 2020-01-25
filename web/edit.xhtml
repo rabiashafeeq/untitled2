@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+<h:body >
+    <div class="container">
+    <h1>Edit User</h1>
+    <div class="row">
+    <h:form>
+        <Strong>Edit Data</Strong><br/><br/>
+        <h:messages styleClass="error" />
+        <h:panelGrid styleClass="borderr">
+            <Strong>General Information:</Strong><br/>
+
+            First Name:
+            <h:inputText id="firstName" label="First Name" required="true" value="#{studentBean.student.studentName}" >
+
+            </h:inputText>
+            <h:message for="firstName" styleClass="error"/>
+
+            Regno:
+            <h:inputText id="regno" label="regno" required="true" value="#{studentBean.student.studentRegNo}" >
+
+            </h:inputText>
+            <h:message for="regno" styleClass="error"/>
+
+            Semester
+            <h:inputText id="Semester" label="Semester" required="true" value="#{studentBean.student.studentSemester}" >
+                <f:validateLongRange minimum="0" maximum="120"/>
+            </h:inputText>
+            <h:message for="Semester" styleClass="error"/>
+
+
+        </h:panelGrid>
+        <br/>
+        <h:commandButton value="Edit"  action="#{studentBean.updateStudent}"></h:commandButton>
+        <h:commandButton value="Back"  action="ListAllReservation"></h:commandButton>
+
+    </h:form>
+    </div>
+    </div>
+
+</h:body>
+</html>
